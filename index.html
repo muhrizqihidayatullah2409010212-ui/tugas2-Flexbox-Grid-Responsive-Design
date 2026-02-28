@@ -214,24 +214,28 @@ animate();
 window.addEventListener("resize", resizeCanvas);
 </script>
 
-<!-- BACKGROUND MUSIC -->
-<audio id="bgm" loop>
+<audio id="bgm" loop preload="auto">
   <source src="SaveTik.io_7202021830914329899.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const music = document.getElementById("bgm");
 
-function playMusicOnce() {
-  music.play();
-  window.removeEventListener("scroll", playMusicOnce);
+function startMusic() {
+  music.play().catch(()=>{});
+  window.removeEventListener("scroll", startMusic);
+  window.removeEventListener("click", startMusic);
+  window.removeEventListener("touchstart", startMusic);
 }
 
-window.addEventListener("scroll", playMusicOnce);
+window.addEventListener("scroll", startMusic);
+window.addEventListener("click", startMusic);
+window.addEventListener("touchstart", startMusic);
 </script>
 
 </body>
 </html>
+
 
 
 
