@@ -214,6 +214,19 @@ animate();
 window.addEventListener("resize", resizeCanvas);
 </script>
 
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop>
+  <source src="SaveTik.io_7202021830914329899.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgm");
+document.addEventListener("click", function () {
+  music.play();
+}, { once: true });
+</script>
+
 </body>
 </html>
+
 
