@@ -194,6 +194,7 @@ body{
   border:none;
   outline:none;
 }
+
 .social-contact{
   margin-top:25px;
   text-align:center;
@@ -220,6 +221,7 @@ body{
   transform:translateY(-4px);
   box-shadow:0 0 35px rgba(255,0,150,0.8);
 }
+
 /* FOOTER */
 .footer{
   padding:30px;
