@@ -221,12 +221,17 @@ window.addEventListener("resize", resizeCanvas);
 
 <script>
 const music = document.getElementById("bgm");
-document.addEventListener("click", function () {
+
+function playMusicOnce() {
   music.play();
-}, { once: true });
+  window.removeEventListener("scroll", playMusicOnce);
+}
+
+window.addEventListener("scroll", playMusicOnce);
 </script>
 
 </body>
 </html>
+
 
 
