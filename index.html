@@ -214,7 +214,7 @@ animate();
 window.addEventListener("resize", resizeCanvas);
 </script>
 
-<audio id="bgm" loop preload="auto">
+<audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -222,7 +222,7 @@ window.addEventListener("resize", resizeCanvas);
 const music = document.getElementById("bgm");
 
 function startMusic() {
-  music.play().catch(()=>{});
+  music.play().catch(() => {});
   window.removeEventListener("scroll", startMusic);
   window.removeEventListener("click", startMusic);
   window.removeEventListener("touchstart", startMusic);
@@ -235,6 +235,7 @@ window.addEventListener("touchstart", startMusic);
 
 </body>
 </html>
+
 
 
 
