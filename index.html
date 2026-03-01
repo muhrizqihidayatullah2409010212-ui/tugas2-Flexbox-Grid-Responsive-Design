@@ -221,20 +221,19 @@ window.addEventListener("resize", resizeCanvas);
 <script>
 const music = document.getElementById("bgm");
 
-function startMusic() {
-  music.play().catch(() => {});
-  window.removeEventListener("scroll", startMusic);
-  window.removeEventListener("click", startMusic);
-  window.removeEventListener("touchstart", startMusic);
-}
-
-window.addEventListener("scroll", startMusic);
-window.addEventListener("click", startMusic);
-window.addEventListener("touchstart", startMusic);
+document.addEventListener("click", function start() {
+  music.play().then(() => {
+    console.log("Music started");
+  }).catch(err => {
+    console.log("Blocked:", err);
+  });
+  document.removeEventListener("click", start);
+});
 </script>
 
 </body>
 </html>
+
 
 
 
